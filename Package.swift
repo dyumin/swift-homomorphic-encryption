@@ -145,7 +145,9 @@ let package = Package(
                 "HomomorphicEncryption",
                 .product(name: "Logging", package: "swift-log"),
             ],
-            swiftSettings: executableSettings),
+            swiftSettings: executableSettings + [
+                SwiftSetting.interoperabilityMode(.Cxx)
+            ]),
         .executableTarget(
             name: "PIRShardDatabase",
             dependencies: [
